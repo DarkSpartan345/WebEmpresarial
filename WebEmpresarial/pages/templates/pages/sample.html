@@ -12,7 +12,10 @@
                   <span class="section-heading-lower">{{page.name}}</span>
                 </h2>
                 <div class="section-content">
-                    <p>{{page.content}}</p>
+                    <p>{{page.content|safe}}</p>
+                    {%if user.is_authenticated%}
+                    <p><a href="{% url 'admin:pages_page_change' page.id %}">Editar</a></p>
+                    {%endif%}
                 </div>
               </div>
             </div>

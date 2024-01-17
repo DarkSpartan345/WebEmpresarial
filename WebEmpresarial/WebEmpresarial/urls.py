@@ -21,10 +21,16 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #paths core
     path('', include('core.urls')),
+    #paths services
     path('', include('services.urls')),
+    #paths blog
     path('', include('blog.urls')),
+    #paths pages
     path('', include('pages.urls')),
+    #paths pages
+    path('', include('contact.urls')),
 ]   
 if settings.DEBUG:
     from django.conf.urls.static import static
